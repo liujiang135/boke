@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?php echo $title?></title>
+    <link rel="stylesheet" href="<?php echo CSS_PATH?>base.css">
+    <link rel="stylesheet" href="<?php echo CSS_PATH?>swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="<?php echo CSS_PATH?>d_index.css">
+    <script src="<?php echo JS_PATH?>swiper-3.4.2.min.js"></script>
+    <script src="<?php echo JS_PATH?>jquery.min.js"></script></head>
+    <script src="<?php echo JS_PATH?>d_index.js"></script></head>
+<style>
+    a {
+        text-decoration: none;
+    }
+    .list ul li a{
+        display: block;
+        color: #fff;
+    }
+</style>
+<body>
+<?php include VIEW_PATH.'header.html'?>
+<?php include VIEW_PATH.'search.html'?>
+
+<div class="banner" >
+    <div class="banner_info">
+        <!--<img src="<?php echo IMG_PATH?>d_01.png" alt="">-->
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background: url(<?php echo IMG_PATH?>d_02.png) no-repeat center/cover"><img src="<?php echo IMG_PATH?>d_01.png" alt=""></div>
+                <div class="swiper-slide" style="background: url(<?php echo IMG_PATH?>d_02.png) no-repeat center/cover"><img src="<?php echo IMG_PATH?>d_01.png" alt=""></div>
+                <div class="swiper-slide" style="background: url(<?php echo IMG_PATH?>d_02.png) no-repeat center/cover"><img src="<?php echo IMG_PATH?>d_01.png" alt=""></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+</div>
+<div class="list">
+    <ul>
+        <li  style="background: url(<?php echo IMG_PATH?>d_03.png) no-repeat center/100%" ><a href="#">商品分类</a></li>
+        <li><a href="#">热门推荐</a></li>
+        <li ><a href="#">大神推荐</a></li>
+        <li ><a href="#">VR实景</a></li>
+    </ul>
+</div>
+<div class="zhanshi">
+    <div class="fenlei active">
+        <div class="bg" style="background: url(<?php echo IMG_PATH?>d_04.png) no-repeat center/80%">
+            <p>商品分类</p>
+        </div>
+        <div class="content">
+            <ul class="xxk">
+                <?php foreach($data as $v):?>
+                <li id="<?php echo $v['id']?>"><a href="<?php echo PHP_PATH?>lj_shoping/shopinglist1?id=<?php echo $v['id']?>"><img src="<?php echo $v['pic']?>" alt=""></a></li>
+                <?php endforeach; ?>
+<!--
+
+                <li><img src="<?php echo IMG_PATH?>d_9.png" alt=""></li>
+                <li><img src="<?php echo IMG_PATH?>d_10.png" alt=""></li>
+                <li><img src="<?php echo IMG_PATH?>d_11.png" alt=""></li>
+                <li><img src="<?php echo IMG_PATH?>d_12.png" alt=""></li>
+                <li><img src="<?php echo IMG_PATH?>d_13.png" alt=""></li>
+                <li><img src="<?php echo IMG_PATH?>d_14.png" alt=""></li>
+-->
+            </ul>
+        </div>
+    </div>
+    <div class="fenlei">
+        <div class="bg bg2" style="background: url(<?php echo IMG_PATH?>d_15.png) no-repeat center/100%">
+            <a href="<?php echo PHP_PATH?>lj_shoping/shopinglist1?id=<?php echo $v['id']?>" style="display: block;width: 100%;height: 100%">
+                <p>热门推荐</p>
+                <h1>中式禅意风格</h1>
+                <h2>煮一杯清茶 闻香知雅意</h2>
+                <h3>美式复古客厅装饰品新中式陶瓷花瓶干花仿真插花花艺禅意陶瓷摆件</h3>
+                <h4>亲密无间</h4>
+                <h5>品牌直销 居家自用 婚庆送礼</h5>
+                <h6>创意新中式摆件禅意家居客厅电视柜玄关 树脂工艺品摆设 软装饰品</h6>
+                <span>¥ 769.00</span>
+                <i>¥ 675.00</i>
+            </a>
+        </div>
+
+    </div>
+    <div class="fenlei">
+        <div class="bg" style="background: url(<?php echo IMG_PATH?>d_04.png) no-repeat center/80%">
+            <p>大神推荐</p>
+        </div>
+        <div class="content">
+            <ul class="xxk">
+                <?php foreach($data as $v):?>
+                <li id="<?php echo $v['id']?>">
+                    <a href="#">
+                        <img src="<?php echo $v['pic']?>" alt="">
+                    </a>
+                </li><li id="<?php echo $v['id']?>"><a href="<?php echo PHP_PATH?>lj_shoping/shopinglist1?id=<?php echo $v['id']?>"><img src="<?php echo $v['pic']?>" alt=""></a></li>
+                <?php endforeach; ?>
+                <!--<li><img src="<?php echo IMG_PATH?>d_9.png" alt=""></li>-->
+                <!--<li><img src="<?php echo IMG_PATH?>d_10.png" alt=""></li>-->
+                <!--<li><img src="<?php echo IMG_PATH?>d_11.png" alt=""></li>-->
+                <!--<li><img src="<?php echo IMG_PATH?>d_12.png" alt=""></li>-->
+                <!--<li><img src="<?php echo IMG_PATH?>d_13.png" alt=""></li>-->
+                <!--<li><img src="<?php echo IMG_PATH?>d_14.png" alt=""></li>-->
+            </ul>
+        </div>
+    </div>
+    <div class="fenlei">
+        <div class="bg bg2" style="background: url(<?php echo IMG_PATH?>d_15.png) no-repeat center/100%">
+            <a href="<?php echo PHP_PATH?>lj_shoping/shopinglist1?id=<?php echo $v['id']?>" style="display: block;width: 100%;height: 100%">
+                <p>热门推荐</p>
+                <h1>中式禅意风格</h1>
+                <h2>煮一杯清茶 闻香知雅意</h2>
+                <h3>美式复古客厅装饰品新中式陶瓷花瓶干花仿真插花花艺禅意陶瓷摆件</h3>
+                <h4>亲密无间</h4>
+                <h5>品牌直销 居家自用 婚庆送礼</h5>
+                <h6>创意新中式摆件禅意家居客厅电视柜玄关 树脂工艺品摆设 软装饰品</h6>
+                <span>¥ 769.00</span>
+                <i>¥ 675.00</i>
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<ul class="footer">
+    <li class="active"><a href="<?php echo PHP_PATH?>home/index">
+        <div class="pic"></div>
+        <span>首页</span>
+    </a></li>
+    <li><a href="<?php echo PHP_PATH?>zjt_design">
+        <div class="pic"></div>
+        <span>设计师</span>
+    </a></li>
+    <li><a href="<?php echo PHP_PATH?>lj_shoping/index">
+        <div class="pic"></div>
+        <span>购物车</span>
+    </a></li>
+    <li><a href="<?php echo PHP_PATH?>lzn_my">
+        <div class="pic"></div>
+        <span>我的</span>
+    </a></li>
+    <li><a href="<?php echo PHP_PATH?>lyx_state/lyx_state">
+        <div class="pic"></div>
+        <span>动态</span>
+    </a></li>
+</ul>
+
+</body>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay : 2000,
+        autoplayDisableOnInteraction : false,
+        spaceBetween: 30,
+    });
+
+    $('.list ul li').on('click',function () {
+        $(this).siblings().css({'background':''});
+        $(this).css({'background':'url(<?php echo IMG_PATH?>d_03.png) no-repeat center/80%'});
+
+        $('.zhanshi .fenlei').removeClass('active').eq($(this).index()).addClass('active');
+
+    })
+//    $(".content .xxk").on("click","li",function(){
+//        let id=$(this).attr("id");
+//        $.ajax({
+//            url:"<?php echo PHP_PATH?>home/d_shoplist",
+//            data:{id:id},
+//            success:function () {
+//                console.log(1);
+//                location.href = '../home/d_shoplist'
+//            }
+//        })
+//    })
+
+
+
+</script>
+</html>

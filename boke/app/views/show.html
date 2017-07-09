@@ -1,0 +1,25 @@
+<?php include VIEW_PATH.'header.html' ?>
+<script src="<?php echo JS_PATH?>jquery-3.2.1.js"></script>
+<script src="<?php echo JS_PATH.'show.js';?>"></script>
+<input type="hidden" value="<?php echo $neirong['id'];?>">
+<style>
+    .jumbotron>h1{
+        font-size: 30px;
+    }
+</style>
+<div class="jumbotron container">
+    <h1><?php echo $neirong['title']?></h1>
+    <p><?php echo $neirong['content']?></p>
+    <p><a id='good' class="btn btn-primary btn-small" href="#" role="button">
+        <!--<i class="glyphicon glyphicon-thumbs-up"></i>-->
+        赞(<span><?php echo $neirong['good']; ?></span>)</a>
+        <a id='bad' class="btn btn-primary btn-small" href="#" role="button">
+            <!--<i class="glyphicon glyphicon-thumbs-down"></i>-->
+        踩(<span><?php echo $neirong['bad']; ?></span>)</a>
+    </p>
+    <p><a class="btn btn-primary btn-small" href="<?php echo PHP_PATH?>articlemanager/index?id=<?php echo $neirong['id'];?>" role="button">编辑</a>
+    </p>
+</div>
+
+</body>
+</html>

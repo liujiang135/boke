@@ -1,0 +1,46 @@
+<?php include VIEW_PATH.'header.html' ?>
+<script src="<?php echo JS_PATH?>jquery-3.2.1.js"></script>
+<script src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>
+
+<input type="hidden" value="<?php echo $boke['id']?>">
+<div id="editor" class="container">
+    <?php echo $boke['content']?>
+</div>
+<div class="container" width="100%" style="display: flex;justify-content: center;margin-top: 20px">
+    <button id="publish" class="btn btn-success"  style="margin-right: 30px">发布</button>
+    <a href="<?php echo PHP_PATH?>home/show?id=<?php echo $boke['id']?>" class="btn btn-success">查看文章</a>
+</div>
+
+
+
+<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+<!--<script type="text/javascript" src="/wangEditor.min.js"></script>-->
+<script>
+    $(function () {
+        var E = window.wangEditor;
+        var editor = new E('#editor');
+        editor.customConfig.uploadImgServer = '/boke/boke/index.php/articlemanager/upload';
+        editor.customConfig.showLinkImg = false;
+        editor.customConfig.uploadImgHooks = {
+            customInsert: function (insertImg, result, editor) {
+                var url = result.url;
+                insertImg(url);
+            }
+        };
+        editor.customConfig.uploadFileName = 'file';
+        editor.create();
+
+
+        $('#publish').on('click', function () {
+            $.ajax({
+                url: '/boke/boke/index.php/articlemanager/update',
+                data: {content: editor.txt.html(), id: $('input:hidden').val()},
+                success: function () {
+                    alert('更新成功');
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

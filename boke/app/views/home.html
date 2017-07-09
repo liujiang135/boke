@@ -1,0 +1,26 @@
+<?php include VIEW_PATH.'header.html' ?>
+
+<style>
+    .list-group {
+        margin-top: 10%;
+        width: 40%;
+        font-size: 24px;
+    }
+    a{
+        list-style: none;
+        text-decoration: none;
+    }
+</style>
+
+<ul class="list-group container">
+    <?php foreach($contents as $k=>$v): ?>
+    <a href="<?php echo PHP_PATH?>home/show?id=<?php echo $v['id']?>">
+        <li class="list-group-item"><?php echo $v['uid']?>.<?php echo $v['title']?>
+        <!--<i class="glyphicon glyphicon-star-empty"></i>-->
+        </li>
+    </a>
+    <?php endforeach; ?>
+</ul>
+
+</body>
+</html>
